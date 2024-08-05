@@ -103,7 +103,7 @@ let resp = await fetch('https://solaris.zocom.workers.dev/bodies', {
 ```
 
 ### Submission
-Your *Public* group repository is to be sent to Jesper on teams no later than 11:59 on 8/8. In the afternoon, some sort of presentation will be conducted (I will provide you with the details later).
+Your *Public* group repository is to be sent to Jesper on teams no later than 11:59 on 9/8. In the afternoon, some sort of presentation will be conducted (I will provide you with the details later).
 
 ## Groups
 ### Group 1
