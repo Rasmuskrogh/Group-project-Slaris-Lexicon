@@ -1,7 +1,11 @@
 const loaded = async () => {
     window.addEventListener("load", () => {
         if (!checkStorage()) {
-            getPlanets();
+            try {
+                getPlanets();
+            } catch (error) {
+                return error;
+            }
         }
     });
 };
@@ -19,7 +23,7 @@ const checkStorage = () => {
 const getKey = async () => {
     try {
         const keyResponse = await fetch(
-            "https://5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys",
+            "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys",
             { method: "POST" }
         );
         console.log(keyResponse);
@@ -30,7 +34,7 @@ const getKey = async () => {
         return key;
     } catch (error) {
         console.log(error);
-        return { error: error };
+        return { Error: error };
     }
 };
 
@@ -38,7 +42,7 @@ const getPlanets = async () => {
     try {
         const key = await getKey();
         console.log(typeof key);
-        if (key.error) {
+        if (key.Error) {
             throw new Error("Could not get key");
         } else {
             const response = await fetch(
@@ -50,6 +54,6 @@ const getPlanets = async () => {
             return planetData;
         }
     } catch (error) {
-        console.log(error);
+        return error;
     }
 };
