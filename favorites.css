@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #121139;
+  background-image: url(/assets/star-transparent.png);
+  background-size: cover;
+
+  padding: 3rem;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.favorites-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  div {
+    padding: 1rem;
+    h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    figure {
+      display: flex;
+      width: 100%;
+      padding: 1rem;
+      img {
+        background-color: red;
+        border-radius: 50%;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+      }
+    }
+  }
+}
