@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #121139;
+  background-image: url(/assets/star-transparent.png);
+  background-size: cover;
+
+  padding: 3rem;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.favorites-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border: white 2px solid;
+  height: 100%;
+  div {
+    border: yellow solid 2px;
+    h2 {
+      text-align: center;
+      color: white;
+    }
+    figure {
+      img {
+        color: white;
+      }
+    }
+  }
+}
