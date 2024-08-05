@@ -53,6 +53,7 @@ https://fathomless-shelf-54969.herokuapp.com/
 |/bodies|GET|returns all large celestial bodies in our solar system.|
 
 **Authentication**
+
 The API is secured with an API key. Any GET request without a valid key will result in a 401 error.
 
 To obtain read permissions, you must include the header ```x-zocom``` with a valid API key in your request.
