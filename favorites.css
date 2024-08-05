@@ -23,18 +23,23 @@ h1 {
 .favorites-card-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
-  border: white 2px solid;
   height: 100%;
   div {
-    border: yellow solid 2px;
+    padding: 1rem;
     h2 {
       text-align: center;
       color: white;
+      margin-bottom: 1rem;
     }
     figure {
+      display: flex;
+      width: 100%;
+      padding: 1rem;
       img {
-        color: white;
+        background-color: red;
+        border-radius: 50%;
+        width: 100%;
+        aspect-ratio: 1 / 1;
       }
     }
   }
