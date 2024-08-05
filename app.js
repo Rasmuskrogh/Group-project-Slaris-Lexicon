@@ -1,8 +1,10 @@
-const loaded = async () => {
-    window.addEventListener("load", () => {
+const loaded = () => {
+    window.addEventListener("load", async () => {
         if (!checkStorage()) {
             try {
-                getPlanets();
+                const planets = await getPlanets();
+                const planetsString = JSON.stringify(planets);
+                localStorage.setItem("planets", planetsString);
             } catch (error) {
                 return error;
             }
