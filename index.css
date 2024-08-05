@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.planets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planet {
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    position: relative;
+}
+
+.planet::before {
+    content: attr(data-name);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.planet:hover::before {
+    opacity: 1;
+}
+
+.sun {
+    width: 150px;
+    height: 150px;
+    background-color: #ffcc00;
+}
+
+.mercury {
+    width: 20px;
+    height: 20px;
+    background-color: #6e6e6e;
+}
+
+.venus {
+    width: 25px;
+    height: 25px;
+    background-color: #e6ccb2;
+}
+
+.earth {
+    width: 30px;
+    height: 30px;
+    background-color: #3399ff;
+}
+
+.mars {
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d4d;
+}
+
+.jupiter {
+    width: 40px;
+    height: 40px;
+    background-color: #e69966;
+}
+
+.saturn {
+    width: 35px;
+    height: 35px;
+    background-color: #d4a373;
+    position: relative;
+}
+
+.saturn::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background-color: #d4a373;
+    top: 15px;
+    left: -8px;
+    transform: rotate(30deg);
+}
+
+.uranus {
+    width: 30px;
+    height: 30px;
+    background-color: #cce0ff;
+}
+
+.neptune {
+    width: 25px;
+    height: 25px;
+    background-color: #809fff;
+}
+
+
+
+
+  
+  
