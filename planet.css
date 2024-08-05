@@ -17,9 +17,9 @@ body {
 } */
 
 .aside--circle1 {
-    display: absolute;
+    position: fixed;
     top: 20rem;
-    left: -20rem;
+    left: 20rem;
 
     /* height: calc(100vh * 1.35); */
     height: 10rem;
