@@ -67,7 +67,8 @@ let resp = await fetch('https://solaris.zocom.workers.dev/bodies', {
 })
 ```
 
-## Model
+**Model**
+
 |property|data type|unit|
 |---|---|---|
 |id|number|-|
@@ -82,7 +83,7 @@ let resp = await fetch('https://solaris.zocom.workers.dev/bodies', {
 |desc|string|Description of celestial body|
 |moons|Array|List with names of the belonging moons|
 
-### Example
+**Data Example**
 
 ```js
 {
