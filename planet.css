@@ -179,14 +179,15 @@ body {
 .header--container > .favourite__button {
     justify-self: end;
     align-self: center;
-    height: 2.5rem;
-    padding: 0.5rem 1rem;
+    max-height: 3.5rem;
+    min-height: 2.5rem;
+    padding: 0.5rem;
     background-color: #428ed4;
     border: none;
     border-radius: 0.3rem;
     transition: 0.3s;
     color: rgb(12, 9, 43);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 .header--container > .favourite__button:hover {

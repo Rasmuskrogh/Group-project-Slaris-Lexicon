@@ -25,6 +25,28 @@ window.addEventListener("load", () => {
 
     // Insert Moons into DOM
     insertMoons(planet);
+
+    // Ensure favourites list exists
+    if (!localStorage.getItem("favourites")) {
+        localStorage.setItem("favourites", "[]");
+    }
+
+    let favourites = JSON.parse(localStorage.getItem("favourites"));
+
+    // Set favourite button text
+    setFavouriteButton(favourites, activePlanet);
+
+    // Add eventListener to favourite button
+    document
+        .querySelector(".favourite__button")
+        .addEventListener("click", (e) => {
+            if (favourites.includes(activePlanet)) {
+                removeFromFavourites(favourites, activePlanet);
+            } else {
+                addToFavourites(favourites, activePlanet);
+            }
+            location.reload();
+        });
 });
 
 // Johan: Set color scheme
@@ -79,6 +101,7 @@ const insertPlanetInfo = (
     document.querySelector(".min-temp__p").innerText = tempNight;
 };
 
+// Johan: insert moons info into DOM
 const insertMoons = (planet) => {
     const moonsRef = document.querySelector(".main--moons");
     planet.moons.forEach((moon) => {
@@ -86,4 +109,29 @@ const insertMoons = (planet) => {
         moonRef.innerText = moon;
         moonsRef.appendChild(moonRef);
     });
+};
+
+// Johan: set favourite button text in DOM
+const setFavouriteButton = (favourites, planet) => {
+    if (favourites.includes(planet)) {
+        document.querySelector(".favourite__button").innerText =
+            "Remove Favourite";
+    } else {
+        document.querySelector(".favourite__button").innerText =
+            "Add Favourite";
+    }
+};
+
+// Johan: remove item from favourites list
+const removeFromFavourites = (favourites, planet) => {
+    let newFavourites = favourites.filter((favourite) => favourite !== planet);
+    console.log("Favourites", favourites);
+    console.log("newFavourites", newFavourites);
+    localStorage.setItem("favourites", JSON.stringify(newFavourites));
+};
+
+// Johan: add item to favourites list
+const addToFavourites = (favourites, planet) => {
+    let newFavourites = [...favourites, planet];
+    localStorage.setItem("favourites", JSON.stringify(newFavourites));
 };
