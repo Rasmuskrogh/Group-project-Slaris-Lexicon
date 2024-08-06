@@ -20,21 +20,22 @@ const getFavorites = () => {
       for (planet of planets) {
         for (favorite of this.favorites) {
           if (planet.id === favorite) {
+            console.log("planet.id", planet.id);
             const cardWrapper = document.querySelector(
               ".favorites-card-wrapper"
             );
             const html = `
             <div class="favorites-card">
               <h2>${planet.name}</h2>
-              <div class="planet-div"
+              <div class="planet-div" id="planet-color-${planet.id}"
               </div>
 
             </div>
             `;
             cardWrapper.insertAdjacentHTML("beforeend", html);
             console.log(typeof planet.id);
-            let color;
-            switch (planet.id) {
+            /*let color;
+             switch (planet.id) {
               case 0:
                 color = "#ffcc00";
                 break;
@@ -63,6 +64,7 @@ const getFavorites = () => {
                 color = "#809fff";
             }
             document.querySelector(".planet-div").style.backgroundColor = color;
+            console.log(color); */
           }
         }
       }

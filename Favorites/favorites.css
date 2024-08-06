@@ -39,5 +39,14 @@ h1 {
       padding: 1rem;
       aspect-ratio: 1 / 1;
     }
+    #planet-color-1 {
+      background-color: #6e6e6e;
+    }
+    #planet-color-3 {
+      background-color: #3399ff;
+    }
+    #planet-color-7 {
+      background-color: #cce0ff;
+    }
   }
 }
