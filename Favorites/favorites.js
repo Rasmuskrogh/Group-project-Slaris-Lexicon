@@ -26,10 +26,43 @@ const getFavorites = () => {
             const html = `
             <div class="favorites-card">
               <h2>${planet.name}</h2>
-              <figure><img src="" alt="planet img" /></figure>
+              <div class="planet-div"
+              </div>
+
             </div>
             `;
-            cardWrapper.insertAdjacentElement("beforeend", html);
+            cardWrapper.insertAdjacentHTML("beforeend", html);
+            console.log(typeof planet.id);
+            let color;
+            switch (planet.id) {
+              case 0:
+                color = "#ffcc00";
+                break;
+              case 1:
+                color = "#6e6e6e";
+                break;
+              case 2:
+                color = "#e6ccb2";
+                break;
+              case 3:
+                color = "#3399ff";
+                break;
+              case 4:
+                color = "#ff4d4d";
+                break;
+              case 5:
+                color = "#e69966";
+                break;
+              case 6:
+                color = "#d4a373";
+                break;
+              case 7:
+                color = "#cce0ff";
+                break;
+              case 8:
+                color = "#809fff";
+            }
+            document.querySelector(".planet-div").style.backgroundColor = color;
           }
         }
       }
