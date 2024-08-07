@@ -179,12 +179,15 @@ body {
 
 .nav--planets,
 .nav--favorites {
+    position: fixed;
+    left: 13vw;
+
     height: 6rem;
     aspect-ratio: 1/1;
     border: none;
     border-radius: 100%;
     background-color: rgb(16, 3, 65);
-    box-shadow: 0px 0px 30px 10px rgba(84, 121, 213, 0.75);
+    box-shadow: 0px 0px 30px 10px rgba(84, 121, 213, 0.5);
     transition: 0.3s;
 }
 
@@ -194,13 +197,21 @@ body {
     background-color: rgb(32, 16, 88);
 }
 
+.nav--planets {
+    top: 11vh;
+}
+
+.nav--favorites {
+    top: 75vh;
+}
+
 /* Main */
 
 .main--headings {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    margin-top: 1rem;
+    margin-top: 4rem;
 }
 
 .main--headings > .favorite__button {
