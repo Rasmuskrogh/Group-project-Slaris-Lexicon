@@ -28,6 +28,8 @@
   font-style: normal;
 } */
 
+.nav--planets,
+.nav--favorites,
 .favorite__button,
 .description--name,
 .main--data > article > h3,
@@ -158,7 +160,7 @@ body {
 
 .content--container {
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 30%;
     width: 45%;
     max-width: 35rem;
@@ -169,20 +171,44 @@ body {
 
 /* Header */
 
-.header--container {
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav--planets,
+.nav--favorites {
+    height: 6rem;
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 100%;
+    background-color: rgb(16, 3, 65);
+    box-shadow: 0px 0px 30px 10px rgba(84, 121, 213, 0.75);
+    transition: 0.3s;
+}
+
+.nav--planets:hover,
+.nav--favorites:hover {
+    cursor: pointer;
+    background-color: rgb(32, 16, 88);
+}
+
+/* Main */
+
+.main--headings {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
     margin-top: 1rem;
 }
 
-.header--container > .favorite__button {
+.main--headings > .favorite__button {
     justify-self: end;
     align-self: center;
     max-height: 3.5rem;
     min-height: 2.5rem;
     padding: 0.5rem;
-    background-color: #428ed4;
     border: none;
     border-radius: 0.3rem;
     transition: 0.3s;
@@ -190,11 +216,9 @@ body {
     font-size: 0.9rem;
 }
 
-.header--container > .favorite__button:hover {
+.main--headings > .favorite__button:hover {
     cursor: pointer;
 }
-
-/* Main */
 
 .main--description {
     margin-top: 1.5rem;
