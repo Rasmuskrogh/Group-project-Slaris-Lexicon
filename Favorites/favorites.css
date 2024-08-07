@@ -28,8 +28,19 @@ h1 {
   color: #ffffff;
   letter-spacing: 2px;
   text-align: center;
-  margin-bottom: 3rem;
+
   font-size: 3rem;
+}
+
+.back-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  p {
+    color: white;
+    font-size: 2rem;
+    padding-bottom: 5px;
+  }
 }
 
 .favorites-card-wrapper {
@@ -58,29 +69,32 @@ h1 {
       padding: 1rem;
       aspect-ratio: 1 / 1;
     }
+    #planet-color-0 {
+      background-color: #f5d026;
+    }
     #planet-color-1 {
-      background-color: #6e6e6e;
+      background-color: #8c8a85;
     }
     #planet-color-2 {
-      background-color: #6e6e6e;
+      background-color: #e7cdcc;
     }
     #planet-color-3 {
-      background-color: #3399ff;
+      background-color: #478ed4;
     }
     #planet-color-4 {
-      background-color: #3399ff;
+      background-color: #e85e5e;
     }
     #planet-color-5 {
-      background-color: #3399ff;
+      background-color: #e29468;
     }
     #planet-color-6 {
-      background-color: #3399ff;
+      background-color: #c7aa72;
     }
     #planet-color-7 {
-      background-color: #cce0ff;
+      background-color: #c9d4f1;
     }
     #planet-color-8 {
-      background-color: #3399ff;
+      background-color: #7a9147;
     }
   }
 }
