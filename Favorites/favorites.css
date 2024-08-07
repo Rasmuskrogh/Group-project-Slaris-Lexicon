@@ -8,8 +8,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #121139;
-  background-image: url(/assets/star-transparent.png);
+  background-image: linear-gradient(to right, #212d5d, #190b23),
+    url(/assets/star-transparent.png);
   background-size: cover;
 
   padding: 3rem;
@@ -19,6 +19,7 @@ h1 {
   color: white;
   text-align: center;
   margin-bottom: 3rem;
+  font-size: 3rem;
 }
 
 .favorites-card-wrapper {
@@ -42,11 +43,26 @@ h1 {
     #planet-color-1 {
       background-color: #6e6e6e;
     }
+    #planet-color-2 {
+      background-color: #6e6e6e;
+    }
     #planet-color-3 {
+      background-color: #3399ff;
+    }
+    #planet-color-4 {
+      background-color: #3399ff;
+    }
+    #planet-color-5 {
+      background-color: #3399ff;
+    }
+    #planet-color-6 {
       background-color: #3399ff;
     }
     #planet-color-7 {
       background-color: #cce0ff;
+    }
+    #planet-color-8 {
+      background-color: #3399ff;
     }
   }
 }
