@@ -28,7 +28,7 @@
   font-style: normal;
 } */
 
-.favourite__button,
+.favorite__button,
 .description--name,
 .main--data > article > h3,
 .main--moons > h3,
@@ -176,7 +176,7 @@ body {
     margin-top: 1rem;
 }
 
-.header--container > .favourite__button {
+.header--container > .favorite__button {
     justify-self: end;
     align-self: center;
     max-height: 3.5rem;
@@ -190,7 +190,7 @@ body {
     font-size: 0.9rem;
 }
 
-.header--container > .favourite__button:hover {
+.header--container > .favorite__button:hover {
     cursor: pointer;
 }
 

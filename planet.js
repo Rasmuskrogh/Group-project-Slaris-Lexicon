@@ -28,24 +28,24 @@ window.addEventListener("load", () => {
     // Insert Moons into DOM
     insertMoons(planet);
 
-    // Ensure favourites list exists
-    if (!localStorage.getItem("favourites")) {
-        localStorage.setItem("favourites", "[]");
+    // Ensure favorites list exists
+    if (!localStorage.getItem("favorites")) {
+        localStorage.setItem("favorites", "[]");
     }
 
-    let favourites = JSON.parse(localStorage.getItem("favourites"));
+    let favorites = JSON.parse(localStorage.getItem("favorites"));
 
-    // Set favourite button text
-    setFavouriteButton(favourites, activePlanet);
+    // Set favorite button text
+    setFavoriteButton(favorites, activePlanet);
 
-    // Add eventListener to favourite button
+    // Add eventListener to favorite button
     document
-        .querySelector(".favourite__button")
+        .querySelector(".favorite__button")
         .addEventListener("click", (e) => {
-            if (favourites.includes(activePlanet)) {
-                removeFromFavourites(favourites, activePlanet);
+            if (favorites.includes(activePlanet)) {
+                removeFromFavorites(favorites, activePlanet);
             } else {
-                addToFavourites(favourites, activePlanet);
+                addToFavorites(favorites, activePlanet);
             }
             location.reload();
         });
@@ -72,7 +72,7 @@ const setColorScheme = (planet) => {
     document.querySelector(".aside--circle3").style.backgroundColor =
         colors[planet];
 
-    document.querySelector(".favourite__button").style.backgroundColor =
+    document.querySelector(".favorite__button").style.backgroundColor =
         colors[planet];
 };
 
@@ -113,27 +113,26 @@ const insertMoons = (planet) => {
     });
 };
 
-// Johan: set favourite button text in DOM
-const setFavouriteButton = (favourites, planet) => {
-    if (favourites.includes(planet)) {
-        document.querySelector(".favourite__button").innerText =
-            "Remove Favourite";
+// Johan: set favorite button text in DOM
+const setFavoriteButton = (favorites, planet) => {
+    if (favorites.includes(planet)) {
+        document.querySelector(".favorite__button").innerText =
+            "Remove Favorite";
     } else {
-        document.querySelector(".favourite__button").innerText =
-            "Add Favourite";
+        document.querySelector(".favorite__button").innerText = "Add Favorite";
     }
 };
 
-// Johan: remove item from favourites list
-const removeFromFavourites = (favourites, planet) => {
-    let newFavourites = favourites.filter((favourite) => favourite !== planet);
-    console.log("Favourites", favourites);
-    console.log("newFavourites", newFavourites);
-    localStorage.setItem("favourites", JSON.stringify(newFavourites));
+// Johan: remove item from favorites list
+const removeFromFavorites = (favorites, planet) => {
+    let newFavorites = favorites.filter((favorite) => favorite !== planet);
+    console.log("Favorites", favorites);
+    console.log("newFavorites", newFavorites);
+    localStorage.setItem("favorites", JSON.stringify(newFavorites));
 };
 
-// Johan: add item to favourites list
-const addToFavourites = (favourites, planet) => {
-    let newFavourites = [...favourites, planet];
-    localStorage.setItem("favourites", JSON.stringify(newFavourites));
+// Johan: add item to favorites list
+const addToFavorites = (favorites, planet) => {
+    let newFavorites = [...favorites, planet];
+    localStorage.setItem("favorites", JSON.stringify(newFavorites));
 };
