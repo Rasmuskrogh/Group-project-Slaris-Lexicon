@@ -1,4 +1,9 @@
 /* Made by Rasmus */
+
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Secular+One&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,28 +13,53 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #121139;
-  background-image: url(/assets/star-transparent.png);
-  background-size: cover;
+  background-image: url(/assets/star-transparent.png),
+    linear-gradient(to right, #212d5d, #190b23);
+  background-size: cover, cover;
 
   padding: 3rem;
 }
 
 h1 {
-  color: white;
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 2px;
   text-align: center;
-  margin-bottom: 3rem;
+
+  font-size: 3rem;
+}
+
+.back-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  p {
+    color: white;
+    font-size: 2rem;
+    padding-bottom: 5px;
+  }
 }
 
 .favorites-card-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
   height: 100%;
   div {
     padding: 1rem;
     h2 {
       text-align: center;
-      color: white;
+      font-family: "Lora", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      color: #ffd029;
       margin-bottom: 1rem;
     }
     .planet-div {
@@ -39,14 +69,42 @@ h1 {
       padding: 1rem;
       aspect-ratio: 1 / 1;
     }
+    #planet-color-0 {
+      background-color: #f5d026;
+    }
     #planet-color-1 {
-      background-color: #6e6e6e;
+      background-color: #8c8a85;
+    }
+    #planet-color-2 {
+      background-color: #e7cdcc;
     }
     #planet-color-3 {
-      background-color: #3399ff;
+      background-color: #478ed4;
+    }
+    #planet-color-4 {
+      background-color: #e85e5e;
+    }
+    #planet-color-5 {
+      background-color: #e29468;
+    }
+    #planet-color-6 {
+      background-color: #c7aa72;
     }
     #planet-color-7 {
-      background-color: #cce0ff;
+      background-color: #c9d4f1;
+    }
+    #planet-color-8 {
+      background-color: #7a9147;
+    }
+  }
+}
+
+@media screen and (width < 1100px) {
+  .favorites-card-wrapper {
+    div {
+      h2 {
+        font-size: 0.9rem;
+      }
     }
   }
 }

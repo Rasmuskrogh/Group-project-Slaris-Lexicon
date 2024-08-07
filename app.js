@@ -1,12 +1,10 @@
 // When page is loaded
 const loaded = () => {
   window.addEventListener("load", async () => {
- favorites
-=======
     if (!setFavorites()) {
       localStorage.setItem("favorites", "[]");
     }
- main
+    main;
     if (!checkStorage()) {
       // Acquire API key
       const key = await getKey();
@@ -36,10 +34,7 @@ const setFavorites = () => {
 // Are planets in localStorage?
 const checkStorage = () => {
   const planets = localStorage.getItem("planets");
-  if (planets) {
-    return true;
-  }
-  return false;
+  return planets ? true : false;
 };
 
 // Acquire API key
