@@ -1,10 +1,4 @@
 // Made by Rasmus
-/* const createFavorites = () => {
-  favorites = [1, 3, 7];
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-};
-
-createFavorites(); */
 
 const getFavorites = () => {
   try {
@@ -14,9 +8,7 @@ const getFavorites = () => {
     } else {
       const planetArray = JSON.parse(localStorage.getItem("planets"));
       const favoritesArray = JSON.parse(localStorage.getItem("favorites"));
-      console.log("array", favoritesArray);
       const planets = planetArray.bodies;
-      console.log(planets);
       for (planet of planets) {
         for (favorite of favoritesArray) {
           if (planet.id === favorite) {
@@ -44,7 +36,6 @@ const getFavorites = () => {
 
 const checkFavorites = () => {
   const favorites = localStorage.getItem("favorites");
-  console.log(favorites);
   if (favorites) {
     return true;
   }
