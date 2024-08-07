@@ -1,6 +1,12 @@
 // When page is loaded
 const loaded = () => {
   window.addEventListener("load", async () => {
+ favorites
+=======
+    if (!setFavorites()) {
+      localStorage.setItem("favorites", "[]");
+    }
+ main
     if (!checkStorage()) {
       // Acquire API key
       const key = await getKey();
@@ -22,6 +28,11 @@ const loaded = () => {
   });
 };
 
+// Is there already a favorites list or not?
+const setFavorites = () => {
+  const favorites = localStorage.getItem("favorites");
+  return favorites ? true : false;
+};
 // Are planets in localStorage?
 const checkStorage = () => {
   const planets = localStorage.getItem("planets");
