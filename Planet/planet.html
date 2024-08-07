@@ -8,7 +8,7 @@
     </head>
     <body>
         <figure class="starry-background">
-            <img src="./assets/star-transparent.png" alt="Stars" />
+            <img src="../assets/star-transparent.png" alt="Stars" />
         </figure>
         <aside class="aside--container">
             <div class="aside--circle1"></div>
@@ -18,12 +18,18 @@
 
         <section class="content--container">
             <header class="header--container">
-                <h1 class="description--name"></h1>
-                <button class="favorite__button"></button>
-                <h2 class="description--latin"></h2>
+                <nav class="header__nav">
+                    <button class="nav--planets">Planets</button>
+                    <button class="nav--favorites">Favorites</button>
+                </nav>
             </header>
 
             <main class="main--container">
+                <section class="main--headings">
+                    <h1 class="description--name"></h1>
+                    <button class="favorite__button"></button>
+                    <h2 class="description--latin"></h2>
+                </section>
                 <section class="main--description">
                     <p class="description--text"></p>
                 </section>
