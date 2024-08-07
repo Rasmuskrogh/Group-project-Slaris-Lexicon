@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
     // Set favorite button text
     setFavoriteButton(favorites, activePlanet);
 
-    // Add eventListener to favorite button
+    // Add eventListener to click favorite button
     document
         .querySelector(".favorite__button")
         .addEventListener("click", (e) => {
