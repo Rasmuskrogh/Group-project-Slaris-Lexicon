@@ -1,3 +1,4 @@
+/* Made by Rasmus */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -31,16 +32,21 @@ h1 {
       color: white;
       margin-bottom: 1rem;
     }
-    figure {
-      display: flex;
+    .planet-div {
+      color: white;
+      border-radius: 50%;
       width: 100%;
       padding: 1rem;
-      img {
-        background-color: red;
-        border-radius: 50%;
-        width: 100%;
-        aspect-ratio: 1 / 1;
-      }
+      aspect-ratio: 1 / 1;
+    }
+    #planet-color-1 {
+      background-color: #6e6e6e;
+    }
+    #planet-color-3 {
+      background-color: #3399ff;
+    }
+    #planet-color-7 {
+      background-color: #cce0ff;
     }
   }
 }

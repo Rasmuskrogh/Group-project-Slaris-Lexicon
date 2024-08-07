@@ -1,9 +1,12 @@
 // When page is loaded
 const loaded = () => {
   window.addEventListener("load", async () => {
+ favorites
+=======
     if (!setFavorites()) {
       localStorage.setItem("favorites", "[]");
     }
+ main
     if (!checkStorage()) {
       // Acquire API key
       const key = await getKey();
