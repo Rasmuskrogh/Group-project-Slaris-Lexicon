@@ -2,6 +2,16 @@
 window.addEventListener("load", () => {
     // TODO: Check if planets data exist in localStorage
 
+    // Add event listeners for Navigation to planets
+    document.querySelector(".nav--planets").addEventListener("click", (e) => {
+        window.location.href = "../index.html";
+    });
+
+    // Add event listeners for Navigation to Favorites
+    document.querySelector(".nav--favorites").addEventListener("click", (e) => {
+        window.location.href = "../Favorites/favorites.html";
+    });
+
     // Check for active planet in localStorage
     if (!localStorage.getItem("planet")) {
         // If no planet, set a default
