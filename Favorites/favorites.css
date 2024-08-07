@@ -8,9 +8,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(to right, #212d5d, #190b23),
-    url(/assets/star-transparent.png);
-  background-size: cover;
+  background-image: url(/assets/star-transparent.png),
+    linear-gradient(to right, #212d5d, #190b23);
+  background-size: cover, cover;
 
   padding: 3rem;
 }
