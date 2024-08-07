@@ -1,13 +1,25 @@
 // Johan: run once DOM is loaded
 window.addEventListener("load", () => {
+    // Define planet colors
+    const colors = [
+        "#FFD029",
+        "#888888",
+        "#E7CDCD",
+        "#428ED4",
+        "#EF5F5F",
+        "#E29468",
+        "#C7AA72",
+        "#C9D4F1",
+        "#7A91A7",
+    ];
     // TODO: Check if planets data exist in localStorage
 
-    // Add event listeners for Navigation to planets
+    // Event listener for Navigation to planets
     document.querySelector(".nav--planets").addEventListener("click", (e) => {
         window.location.href = "../index.html";
     });
 
-    // Add event listeners for Navigation to Favorites
+    // Event listener for Navigation to Favorites
     document.querySelector(".nav--favorites").addEventListener("click", (e) => {
         window.location.href = "../Favorites/favorites.html";
     });
@@ -24,7 +36,7 @@ window.addEventListener("load", () => {
     let planet = planets.bodies[activePlanet];
 
     // Set planet color theme on page
-    setColorScheme(activePlanet);
+    setColorScheme(activePlanet, colors);
 
     // Get formatted values for temps and distances
     let tempDay = formatTemp(planet.temp.day);
@@ -43,12 +55,29 @@ window.addEventListener("load", () => {
         localStorage.setItem("favorites", "[]");
     }
 
+    // Acquire list of favorite planets
     let favorites = JSON.parse(localStorage.getItem("favorites"));
 
     // Set favorite button text
     setFavoriteButton(favorites, activePlanet);
 
-    // Add eventListener to click favorite button
+    // eventListeners for hovering favorite button
+    document
+        .querySelector(".favorite__button")
+        .addEventListener("mouseover", (e) => {
+            let hoverColor = calculateHoverColor(activePlanet, colors);
+            document.querySelector(".favorite__button").style.backgroundColor =
+                hoverColor;
+        });
+
+    document
+        .querySelector(".favorite__button")
+        .addEventListener("mouseleave", (e) => {
+            document.querySelector(".favorite__button").style.backgroundColor =
+                colors[activePlanet];
+        });
+
+    // eventListener to click favorite button
     document
         .querySelector(".favorite__button")
         .addEventListener("click", (e) => {
@@ -62,19 +91,7 @@ window.addEventListener("load", () => {
 });
 
 // Johan: Set color scheme
-const setColorScheme = (planet) => {
-    const colors = [
-        "#FFD029",
-        "#888888",
-        "#E7CDCD",
-        "#428ED4",
-        "#EF5F5F",
-        "#E29468",
-        "#C7AA72",
-        "#C9D4F1",
-        "#7A91A7",
-    ];
-
+const setColorScheme = (planet, colors) => {
     document.querySelector(".aside--circle1").style.backgroundColor =
         colors[planet];
     document.querySelector(".aside--circle2").style.backgroundColor =
@@ -133,11 +150,18 @@ const setFavoriteButton = (favorites, planet) => {
     }
 };
 
+// Johan: Calculate color for hovering favorite button
+const calculateHoverColor = (planet, colors) => {
+    const oldColor = colors[planet];
+    const oldDecimalColor = parseInt(oldColor.slice(1), 16);
+    const newDecimalColor = oldDecimalColor + 4000;
+    const newHexColor = `#${newDecimalColor.toString(16)}`;
+    return newHexColor;
+};
+
 // Johan: remove item from favorites list
 const removeFromFavorites = (favorites, planet) => {
     let newFavorites = favorites.filter((favorite) => favorite !== planet);
-    console.log("Favorites", favorites);
-    console.log("newFavorites", newFavorites);
     localStorage.setItem("favorites", JSON.stringify(newFavorites));
 };
 
