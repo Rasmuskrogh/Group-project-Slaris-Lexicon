@@ -72,20 +72,8 @@
 
 /* Globals */
 
-:root {
+* {
     box-sizing: border-box;
-}
-
-body,
-header,
-main,
-footer,
-article,
-section,
-h1,
-h2,
-h3,
-p {
     margin: 0;
     padding: 0;
 }
