@@ -12,7 +12,6 @@ window.addEventListener("load", () => {
         "#C9D4F1",
         "#7A91A7",
     ];
-    // TODO: Check if planets data exist in localStorage
 
     // Event listener for Navigation to planets
     document.querySelector(".nav--planets").addEventListener("click", (e) => {
@@ -49,11 +48,6 @@ window.addEventListener("load", () => {
 
     // Insert Moons into DOM
     insertMoons(planet);
-
-    // Ensure favorites list exists
-    if (!localStorage.getItem("favorites")) {
-        localStorage.setItem("favorites", "[]");
-    }
 
     // Acquire list of favorite planets
     let favorites = JSON.parse(localStorage.getItem("favorites"));
