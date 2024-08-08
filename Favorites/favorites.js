@@ -12,7 +12,6 @@ const getFavorites = () => {
       for (planet of planets) {
         for (favorite of favoritesArray) {
           if (planet.id === favorite) {
-            console.log("planet.id", planet.id);
             const cardWrapper = document.querySelector(
               ".favorites-card-wrapper"
             );
@@ -42,4 +41,27 @@ const checkFavorites = () => {
   return false;
 };
 
+const goToPlanets = () => {
+  document.querySelector(".favorites-nav").addEventListener("click", (e) => {
+    window.location.href = "../index.html";
+  });
+};
+
+const goToPlanet = () => {
+  const favoritePlanets = document.querySelector(
+    ".favorites-card-wrapper"
+  ).children;
+
+  for (planet of favoritePlanets) {
+    const id = planet.children[1].id;
+    const idNumber = id[id.length - 1];
+    planet.addEventListener("click", (e) => {
+      localStorage.setItem("planet", idNumber);
+      window.location.href = "../Planet/planet.html";
+    });
+  }
+};
+
 getFavorites();
+goToPlanets();
+goToPlanet();
