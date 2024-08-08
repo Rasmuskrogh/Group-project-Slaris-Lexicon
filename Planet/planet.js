@@ -1,3 +1,4 @@
+// All code made by Johan
 // Johan: run once DOM is loaded
 window.addEventListener("load", () => {
     // Define planet colors
