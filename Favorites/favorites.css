@@ -16,8 +16,18 @@ body {
   background-image: url(/assets/star-transparent.png),
     linear-gradient(to right, #212d5d, #190b23);
   background-size: cover, cover;
+  background-attachment: fixed, fixed;
 
   padding: 3rem;
+}
+
+header {
+  top: 0;
+  left: 0;
+  padding-top: 3rem;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(107, 107, 107, 0.3);
 }
 
 h1 {
@@ -46,6 +56,7 @@ h1 {
   color: #ffffff;
   box-shadow: 0px 0px 30px 10px rgba(84, 121, 213, 0.5);
   transition: 0.3s;
+  margin: 0 0 1rem 1rem;
 }
 
 .favorites-nav:hover {
@@ -53,24 +64,15 @@ h1 {
   background-color: rgb(32, 16, 88);
 }
 
-.back-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  p {
-    color: white;
-    font-size: 2rem;
-    padding-bottom: 5px;
-  }
-}
-
 .favorites-card-wrapper {
+  margin-top: 11rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   height: 100%;
-  div {
-    padding: 1rem;
+  .favorites-card {
+    padding: 2rem;
+    transition: 0.5s;
     h2 {
       text-align: center;
       font-family: "Lora", serif;
@@ -117,6 +119,9 @@ h1 {
     #planet-color-8 {
       background-color: #7a9147;
     }
+  }
+  .favorites-card:hover {
+    padding: 1rem;
   }
 }
 
