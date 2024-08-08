@@ -35,6 +35,8 @@ function renderPlanets(planets) {
 // Run scripts
 loaded();
  */
+
+//Javascript made by Rasmus
 const addLinksFromPlanets = () => {
   const sun = document.querySelector(".sun");
   const mercury = document.querySelector(".mercury");
