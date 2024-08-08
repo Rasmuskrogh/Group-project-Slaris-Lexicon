@@ -42,4 +42,12 @@ const checkFavorites = () => {
   return false;
 };
 
+
+const goToPlanets = () => {
+  document.querySelector(".favorites-nav").addEventListener("click", (e) => {
+    window.location.href = "../index.html";
+    });
+    };
+    
 getFavorites();
+goToPlanets();
