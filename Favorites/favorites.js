@@ -15,15 +15,24 @@ const getFavorites = () => {
             const cardWrapper = document.querySelector(
               ".favorites-card-wrapper"
             );
-            const html = `
+            if (planet.id === 6) {
+              const html = `
+              <div class="favorites-card">
+                <h2>${planet.name}</h2>
+                <div class="planet-div" id="planet-color-${planet.id}"></div>
+                <div id="saturnus-ring" ></div>
+              </div>
+              `;
+              cardWrapper.insertAdjacentHTML("beforeend", html);
+            } else {
+              const html = `
             <div class="favorites-card">
               <h2>${planet.name}</h2>
-              <div class="planet-div" id="planet-color-${planet.id}"
-              </div>
-
+              <div class="planet-div" id="planet-color-${planet.id}"</div>
             </div>
             `;
-            cardWrapper.insertAdjacentHTML("beforeend", html);
+              cardWrapper.insertAdjacentHTML("beforeend", html);
+            }
           }
         }
       }
