@@ -3,7 +3,6 @@
 const getFavorites = () => {
   try {
     if (!checkFavorites()) {
-      console.log("tut");
       throw new Error("Du har inga favoritmarkerade planeter");
     } else {
       const planetArray = JSON.parse(localStorage.getItem("planets"));
@@ -39,15 +38,16 @@ const getFavorites = () => {
     }
   } catch (error) {
     console.log(error);
+    const theWrapper = document.querySelector("main");
+    const theElement = document.createElement("h3");
+    theElement.innerText = "Du har inga favoritmarkerade planeter";
+    theWrapper.appendChild(theElement);
   }
 };
 
 const checkFavorites = () => {
   const favorites = localStorage.getItem("favorites");
-  if (favorites) {
-    return true;
-  }
-  return false;
+  return favorites !== "[]" ? true : false;
 };
 
 const goToPlanets = () => {
