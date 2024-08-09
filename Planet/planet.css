@@ -199,6 +199,7 @@ body {
     transition: 0.3s;
     color: rgb(12, 9, 43);
     font-size: 0.9rem;
+    margin-left: 0.5rem;
 }
 
 .main--headings > .favorite__button:hover {
