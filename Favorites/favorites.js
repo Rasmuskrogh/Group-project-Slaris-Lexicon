@@ -43,7 +43,7 @@ const checkFavorites = () => {
 
 const goToPlanets = () => {
   document.querySelector(".favorites-nav").addEventListener("click", (e) => {
-    window.location.href = "../index.html";
+    window.location.href = "../Index/index.html";
   });
 };
 
