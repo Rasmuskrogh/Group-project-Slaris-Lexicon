@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
 
     // Event listener for Navigation to planets
     document.querySelector(".nav--planets").addEventListener("click", (e) => {
-        window.location.href = "../index.html";
+        window.location.href = "../Index/index.html";
     });
 
     // Event listener for Navigation to Favorites
