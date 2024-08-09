@@ -4,18 +4,24 @@ body {
   height: 100vh;
   background: linear-gradient(to right, #0C164D, #190B22);
   color: white;
-  font-family: 'Arial', sans-serif;
+
+  font-family: 'Secular One', sans-serif;
   display: flex;
-  justify-content: flex-end; /* Aligns content to the right */
-  align-items: flex-start; /* Aligns content to the top */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  overflow: hidden;
+
 }
 
 header {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 20px; /* Adds some padding from the top and right edges */
+
+  top: 20px;
+  right: 20px;
+  text-align: right;
+
 }
 
 header h1 {
@@ -29,6 +35,7 @@ header h1 {
   text-align: right;
   letter-spacing: 0.09em;
   color: #FFFFFF;
+
 }
 
 header h2 {
@@ -42,55 +49,100 @@ header h2 {
   text-align: right;
   letter-spacing: 0.6em;
   color: #FFD029;
-}
 
-
-#home-page {
-  text-align: center;
-}
-
-nav {
-  margin-bottom: 2rem;
 }
 
 #planet-list {
   display: flex;
-  justify-content: center;
+
+  justify-content: space-between;
   align-items: center;
   list-style-type: none;
   padding: 0;
+  margin: 4rem 0 0;
+  width: 80%;
+  max-width: 1000px;
 }
 
 .planet {
-  border-radius: 50%;
-  margin: 0 0.5rem;
   position: relative;
+  margin: 0 2rem; /* Increased margin for more space between planets */
+  border-radius: 50%;
+  flex-shrink: 0;
+  text-align: center; /* Center-align text within the planet */
 }
 
-.planet::before {
+.planet::after {
   content: attr(data-name);
   position: absolute;
-  bottom: -30px;
+  bottom: -30px; /* Adjust this value as needed */
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 14px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  white-space: nowrap;
+  pointer-events: none; /* Makes sure it doesn't interfere with hover state */
 }
 
-.planet:hover::before {
+.planet:hover::after {
   opacity: 1;
 }
 
-.sun {
-  width: 118px;
-  height: 740.12px;
-background-color: #FFD029;
+
+.mercury::after {
+  content: "Mercury";
 }
 
+.venus::after {
+  content: "Venus";
+}
+
+.earth::after {
+  content: "Earth";
+}
+
+.mars::after {
+  content: "Mars";
+
+}
+
+.jupiter::after {
+  content: "Jupiter";
+}
+
+.saturn::after {
+  content: "Saturn";
+}
+
+.uranus::after {
+  content: "Uranus";
+}
+
+.neptune::after {
+  content: "Neptune";
+}
+
+
+.sun {
+
+  width: 400px;
+  height: 600px;
+  background-color: #FFD029;
+  position: absolute;
+  left: -350px; /* Half of the width to align the center */
+}
+
+.sun::after {
+  content: "Sun";
+  position: absolute; /* Absolute positioning to place the label relative to the .sun element */
+  top: 50%; /* Center vertically */
+  left: 100%;
+}
 .mercury {
   width: 14px;
   height: 14px;
@@ -98,9 +150,26 @@ background-color: #FFD029;
 }
 
 .venus {
-  width: 26x;
-  height: 26px;
-  background-color: #E7CDCD;
+
+  width: 26px;
+    height: 26px;
+    background-color: #E7CDCD;
+    position: relative;
+    border: none;
+}
+
+.venus .planet-gif {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 120px; /* Adjust size as needed */
+  height: 120px; /* Make height equal to width to ensure round shape */
+  border-radius: 50%;
+  display: none; /* Initially hidden */
+}
+
+.venus:hover .planet-gif {
+  display: block; /* Make GIF visible when hovering over Venus */
+
 }
 
 .earth {
@@ -126,21 +195,9 @@ background-color: #FFD029;
   height: 144px;
   background-color: #C7AA72;
   position: relative;
-  border-radius: 50%; /* Ensure Saturn is a circle */
-}
 
-.saturn-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px; /* Make the ring larger to ensure visibility */
-  height: 10px; /* Thin height to create a line appearance */
-  margin-top: -5px; /* Center the thin ring vertically */
-  margin-left: -100px; /* Center the ring horizontally */
-  border: 5px solid rgba(255, 255, 255, 0.8); /* White color */
-  border-radius: 50%; /* Make it circular */
-  transform: rotate(20deg); /* Rotate for visual effect */
-  z-index: 1;
+  border-radius: 50%;
+
 }
 
 
@@ -160,22 +217,78 @@ background-color: #FFD029;
   width: 66px;
   height: 66px;
   background-color: #7A91A7;
+
+}
+
+
+.scene {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.saturn {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #d2b48c;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+
+.ring-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 123px;
+  background: rgba(192, 192, 192, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotateX(60deg);
+  animation: rotateRing 6s linear infinite;
+}
+
+@keyframes rotateRing {
+  from {
+      transform: translate(-50%, -50%) rotateX(60deg) rotateZ(0deg);
+  }
+  to {
+      transform: translate(-50%, -50%) rotateX(60deg) rotateZ(360deg);
+  }
+
 }
 
 #favorites-link {
   display: inline-block;
-  margin-top: 2rem;
-  padding: 0.5rem 1rem;
-  background-color: #ffffff33;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  color: white;
-  transition: background-color 0.3s ease;
+
+  position: absolute;
+  bottom: 0px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-#favorites-link:hover {
-  background-color: #ffffff55;
+#favorites-link img {
+  width: 120px; /* Adjust size as needed */
+  height: 120px; /* Make height equal to width to ensure round shape */
+  border-radius: 50%; /* Makes the GIF round */
+  object-fit: cover; /* Ensures the GIF covers the circle without distortion */
+  border: none; /* Remove any default border */
 }
 
-  
-  
+
+
+
+
