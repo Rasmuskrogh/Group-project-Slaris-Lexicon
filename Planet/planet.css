@@ -2,14 +2,14 @@
 
 /* Fonts */
 
-@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Secular+One&display=swap");
+
 /* .secular-one-regular {
   font-family: "Secular One", sans-serif;
   font-weight: 400;
   font-style: normal;
 } */
 
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Secular+One&display=swap");
 /* <uniquifier>: Use a unique and descriptive class name
 <weight>: Use a value from 400 to 700
 .lora-<uniquifier> {
@@ -19,7 +19,6 @@
   font-style: normal;
 } */
 
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Secular+One&display=swap");
 /* <uniquifier>: Use a unique and descriptive class name
 <weight>: Use a value from 100 to 900
 
