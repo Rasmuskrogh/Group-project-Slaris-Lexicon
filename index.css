@@ -4,6 +4,7 @@ body {
   height: 100vh;
   background: linear-gradient(to right, #0C164D, #190B22);
   color: white;
+
   font-family: 'Secular One', sans-serif;
   display: flex;
   flex-direction: column;
@@ -11,13 +12,16 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+
 }
 
 header {
   position: absolute;
+
   top: 20px;
   right: 20px;
   text-align: right;
+
 }
 
 header h1 {
@@ -31,6 +35,7 @@ header h1 {
   text-align: right;
   letter-spacing: 0.09em;
   color: #FFFFFF;
+
 }
 
 header h2 {
@@ -44,10 +49,12 @@ header h2 {
   text-align: right;
   letter-spacing: 0.6em;
   color: #FFD029;
+
 }
 
 #planet-list {
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
@@ -101,6 +108,7 @@ header h2 {
 
 .mars::after {
   content: "Mars";
+
 }
 
 .jupiter::after {
@@ -121,6 +129,7 @@ header h2 {
 
 
 .sun {
+
   width: 400px;
   height: 600px;
   background-color: #FFD029;
@@ -141,6 +150,7 @@ header h2 {
 }
 
 .venus {
+
   width: 26px;
     height: 26px;
     background-color: #E7CDCD;
@@ -159,6 +169,7 @@ header h2 {
 
 .venus:hover .planet-gif {
   display: block; /* Make GIF visible when hovering over Venus */
+
 }
 
 .earth {
@@ -184,8 +195,17 @@ header h2 {
   height: 144px;
   background-color: #C7AA72;
   position: relative;
+
   border-radius: 50%;
+
 }
+
+
+
+
+
+
+
 
 .uranus {
   width: 66px;
@@ -197,6 +217,7 @@ header h2 {
   width: 66px;
   height: 66px;
   background-color: #7A91A7;
+
 }
 
 
@@ -247,10 +268,12 @@ header h2 {
   to {
       transform: translate(-50%, -50%) rotateX(60deg) rotateZ(360deg);
   }
+
 }
 
 #favorites-link {
   display: inline-block;
+
   position: absolute;
   bottom: 0px; /* Adjust as needed */
   left: 50%;
@@ -264,6 +287,7 @@ header h2 {
   object-fit: cover; /* Ensures the GIF covers the circle without distortion */
   border: none; /* Remove any default border */
 }
+
 
 
 

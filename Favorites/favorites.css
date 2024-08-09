@@ -16,8 +16,17 @@ body {
   background-image: url(/assets/star-transparent.png),
     linear-gradient(to right, #212d5d, #190b23);
   background-size: cover, cover;
-
+  background-attachment: fixed, fixed;
   padding: 3rem;
+}
+
+header {
+  top: 0;
+  left: 0;
+  padding-top: 3rem;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(107, 107, 107, 0.3);
 }
 
 h1 {
@@ -44,34 +53,27 @@ h1 {
   font-style: normal;
   text-transform: uppercase;
   color: #ffffff;
-  box-shadow: 0px 0px 30px 10px rgba(84, 121, 213, 0.5);
+  box-shadow: 0px 0px 30px 10px rgba(81, 111, 187, 0.5);
   transition: 0.3s;
+  margin: 0 0 1rem 1rem;
 }
 
 .favorites-nav:hover {
   cursor: pointer;
-  background-color: rgb(32, 16, 88);
-}
-
-.back-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  p {
-    color: white;
-    font-size: 2rem;
-    padding-bottom: 5px;
-  }
+  background-color: rgb(64, 32, 182);
 }
 
 .favorites-card-wrapper {
+  margin-top: 11rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   height: 100%;
-  div {
-    padding: 1rem;
+  .favorites-card {
+    padding: 2rem;
+    transition: 0.5s;
     h2 {
+      margin-left: 12px;
       text-align: center;
       font-family: "Lora", serif;
       font-optical-sizing: auto;
@@ -89,6 +91,9 @@ h1 {
       width: 100%;
       padding: 1rem;
       aspect-ratio: 1 / 1;
+    }
+    .planet-div:hover {
+      cursor: pointer;
     }
     #planet-color-0 {
       background-color: #f5d026;
@@ -117,6 +122,23 @@ h1 {
     #planet-color-8 {
       background-color: #7a9147;
     }
+  }
+  .favorites-card:hover {
+    padding: 1rem;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  margin-top: auto;
+  p {
+    font-family: "Secular One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    color: #ffffff;
   }
 }
 
